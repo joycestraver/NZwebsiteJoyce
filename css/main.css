@@ -1,0 +1,233 @@
+
+body {
+    margin: 0;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  }
+
+  /* navigatie responsive maken */
+  @media screen and (max-width: 750px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 670px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+  .topnav .icon {
+    display: none;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  
+/* titel */
+h1 {text-align: center;}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+
+
+/* leafletkaart ID */
+#leafletkaart{
+    color: rgb(248, 240, 227);
+    text-align: center;
+}
+/* leafletkaart class */
+.leafletkaart {
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: center;
+}
+
+
+/* openlayerskaart ID */
+#openlayerskaart{
+    color: rgb(248, 240, 227);
+    text-align: center;  
+}
+/* openlayerskaart class */
+.openlayerskaart{
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+/* openlayers */
+
+/* flourish bevolkingsdichtheid ID */
+#flourishbevolkingsdichtheid{
+    color: rgb(248, 240, 227);
+    text-align: center; 
+}
+/* flourish bevolkingsdichtheid class */
+.flourishbevolkingsdichtheid{
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+/* Arcgisonline Hoogtekaart ID */
+#hoogtekaart{
+    color: rgb(248, 240, 227);
+    text-align: center; 
+}
+/* Arcgisonline Hoogtekaart class */
+.hoogtekaart{
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+/* Datawrapper Etniciteit ID */
+#etniciteit{
+    color: rgb(248, 240, 227);
+    text-align: center; 
+}
+/* Datawrapper Etniciteit class */
+.etniciteit{
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+/* Flourish vlucht ID */
+#vluchtroute{
+    color: rgb(248, 240, 227);
+    text-align: center; 
+}
+/* Flourish vlucht class */
+.vluchtroute{
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+
+/* navigatie */
+.topnav {
+  overflow: hidden;
+  background-color:transparent;
+  z-index:1;
+  position:absolute;
+  text-align: center;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+.topnav a {
+  float: right;
+  color: #FAF1F3;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.topnav a.logo {float: left}
+
+.topnav a:hover {
+  color: #FAF1F3;
+  display: inline-block;
+  position: relative;
+  color: rgb(14, 73, 19);
+}
+.topnav a:hover:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(115, 51, 15);
+  transform-origin: bottom right;
+  transition:transform 0.25s ease-out;
+}
+.topnav a:hover:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.topnav a.active {
+  background-color: rgb(115, 51, 15);
+  color: #FAF1F3;
+}
+
+
+/* achtergrond foto */
+#myVideo {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  top: 50px;
+  left: 0;
+  z-index: -100;
+}
+
+
+/* footer class */
+.footer{
+    background-color: #050805;
+    padding: 14px 16px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+
+/* titels  */
+h1 {
+font-size: 50px;
+color: #FAF1F3
+}
+
+h2 {
+font-size: 20px;
+text-align: center;
+}
+
+.titel1{
+    color: #FAF1F3;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 60px;
+}
+
+.titel2{
+    color: #FAF1F3;
+    margin-top: -20px;
+    margin-bottom: 50px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 40px;
+}
+
+/* achtergrond kleur */
+body {
+  background-color: #050805;
+  
+}
+
+
+/* copyright text onderaan pagina */
+.footertext{
+    color: rgb(248, 240, 227);
+    font-size: 8px;
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="Nieuw zeeland in beeld" content="new zealand">
+  <meta name="new zealand, toerism, auckland" content="HTML, CSS, JavaScript">
+
+  <!---device width en zorgen dat hij responsive is-->
+<meta name="myVideo" content="width=device-width, initial-scale=1.0">
+<meta name="container" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!---link naar css-->
+<link rel="stylesheet" href="css/main.css">
+
+<!---link naar leaflet-->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+     integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+     crossorigin="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.3.0/ol.css">
+
+<!---script voor leaflet-->
+<script src="https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js"></script>
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
+
+<!---script voor terraformer-->
+<script src="https://cdn.jsdelivr.net/npm/terraformer"></script>
+ <script src="https://unpkg.com/@terraformer/wkt"></script>
+
+
+</head>
+<body> 
+<!---navigatie-->
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="logo"><b>NIEUW ZEELAND</b></a>
+        <a href="#footer">CONTACT</a>
+        <a href="#flourishbevolkingsdichtheid"><b>BEVOLKING</b></a>
+        <a href="#leafletkaart"><b>TOERISME</b></a>
+        <a href="#vluchtroute"><b>ROUTE</b></a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+      </div>
+
+<!---achtergrond foto-->
+      <div>
+        <div class="videogroot">
+            <img src="img/Pexelskleiner.png"
+           width="100%" ></img>
+        </div> 
+
+<!---titels-->
+ <div class="titel1">
+            <h1><b>NIEUW ZEELAND IN BEELD</b></h1>
+            </div>
+            <div class="titel2">
+                <h2>TOERISME/BEVOLKING/ROUTES</h2>
+            </div>
+            
+
+
+
+<!---leafletkaart-->
+<div class="leafletkaart">
+    <div id="leafletkaart" style="width: 100%; height: 400px;"> </div>
+<!---tekst leafletkaart-->
+<div class="leafletkaart">
+    <p id="leafletkaart">
+            leaflet kaart 1 - locatie nieuw zeeland</p>       
+     </div>
+
+
+
+<!---knopjes onder leafletkaart-->
+<div id="knopjes"></div>
+
+
+
+
+<!---tekst openlayerskaart-->
+<div class="openlayerskaart">
+<p id="openlayerskaart">
+         openlayers kaart 2 - onderwerp?</p>
+ </div>
+<!---openlayerskaart-->
+<div class="openlayerskaart"></div>
+
+
+
+
+
+<!---tekst flourish bevolkingsdichtheid-->
+<div class="flourishbevolkingsdichtheid">
+    <p id="flourishbevolkingsdichtheid">
+             Datawrapper 3 - bevolkingsdichtheid</p>
+     </div>
+<!---Flourish bevolkingsdichtheid-->
+ <div class="flourishbevolkingsdichtheid">
+    <div class="flourish-embed flourish-scatter" data-src="visualisation/13110766"><script src="https://public.flourish.studio/resources/embed.js"></script>
+    </div>   
+
+
+
+<!---Tekst bij ArcgisOnline Hoogtekaart-->
+<div class="hoogtekaart">
+    <p id="hoogtekaart">
+             Arcgis kaart 4- Hoogtekaart</p>
+     </div>
+<!---ArcgisOnline Hoogtekaart-->
+  <div class="hoogtekaart">
+    <iframe src="https://aereshogeschool.maps.arcgis.com/apps/instant/basic/index.html?appid=087a02ec62db40b1be50e899491f3eab&locale=en" width="auto" height="600" frameborder="0" style="border:0" allowfullscreen>iFrames are not supported on this page.</iframe>  
+</div>
+
+
+
+
+<!---Tekst onder DataWrapper etniciteit-->
+<div class="etniciteit">
+    <p id="etniciteit">
+             Kaart 5 - etniciteit</p>
+     </div>
+<!---DataWrapper etniciteit-->
+ <div class="etniciteit">
+    <div class="flourish-embed flourish-chart" data-src="visualisation/13110926"><script src="https://public.flourish.studio/resources/embed.js"></script>
+    </div>
+    </div>
+
+
+
+
+<!---Tekst onder Flourish Vluchtroute-->
+<div class="vluchtroute">
+    <p id="vluchtroute">
+             Kaart 6 - vluchtroute</p>
+     </div>
+<!---Flourish Vluchtroute-->
+<div class="vluchtroute">
+    <div class="flourish-embed flourish-globe" data-src="visualisation/13111720"><script src="https://public.flourish.studio/resources/embed.js"></script></div>    
+</div>
+
+
+
+
+<!---Link naar javascript-->
+<script src="js/main.js"></script>
+
+</body>
+
+
+<!---Footer-->
+<div class="footer">
+  <footer id="footer"> 
+      <a href="https://www.aereshogeschool.nl" target="_blank">
+     <button4><img src="img/aeres logo.png" alt="aeres logo" width="50px" height="50px"> </button4></a>
+     <a href="https://www.linkedin.com/in/joyce-straver-22a4111b6/" target="_blank">
+      <button4><img src="img/logowit kopie.png" alt="logo" width="50px" height="50px"></button4></a>
+      <p
+      class="footertext">COPYRIGHT 2022 &copy; JOYCE STRAVER    
+      </p>
+      </footer>
+  
+  </div>
+
+
+</html>
