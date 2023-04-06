@@ -32,93 +32,6 @@ body {
   html {
     scroll-behavior: smooth;
   }
-  
-/* titel */
-h1 {text-align: center;}
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-}
-
-
-
-/* leafletkaart ID */
-#leafletkaart{
-    color: rgb(248, 240, 227);
-    text-align: center;
-}
-/* leafletkaart class */
-.leafletkaart {
-    margin-top: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
-    text-align: center;
-}
-
-
-/* openlayerskaart ID */
-#openlayerskaart{
-    color: rgb(248, 240, 227);
-    text-align: center;  
-}
-/* openlayerskaart class */
-.openlayerskaart{
-    margin-top: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
-}
-/* openlayers */
-
-/* flourish bevolkingsdichtheid ID */
-#flourishbevolkingsdichtheid{
-    color: rgb(248, 240, 227);
-    text-align: center; 
-}
-/* flourish bevolkingsdichtheid class */
-.flourishbevolkingsdichtheid{
-    margin-top: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
-}
-
-
-/* Arcgisonline Hoogtekaart ID */
-#hoogtekaart{
-    color: rgb(248, 240, 227);
-    text-align: center; 
-}
-/* Arcgisonline Hoogtekaart class */
-.hoogtekaart{
-    margin-top: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
-}
-
-
-/* Datawrapper Etniciteit ID */
-#etniciteit{
-    color: rgb(248, 240, 227);
-    text-align: center; 
-}
-/* Datawrapper Etniciteit class */
-.etniciteit{
-    margin-top: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
-}
-
-
-/* Flourish vlucht ID */
-#vluchtroute{
-    color: rgb(248, 240, 227);
-    text-align: center; 
-}
-/* Flourish vlucht class */
-.vluchtroute{
-    margin-top: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
-}
 
 
 
@@ -147,7 +60,7 @@ body {
   color: #FAF1F3;
   display: inline-block;
   position: relative;
-  color: rgb(14, 73, 19);
+  color:#FAF1F3;
 }
 .topnav a:hover:after {
   content: '';
@@ -157,7 +70,7 @@ body {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: rgb(115, 51, 15);
+  background-color: #FAF1F3;
   transform-origin: bottom right;
   transition:transform 0.25s ease-out;
 }
@@ -168,9 +81,9 @@ body {
 
 .topnav a.active {
   background-color: rgb(115, 51, 15);
-  color: #FAF1F3;
+  color: #050805;
 }
-
+  
 
 /* achtergrond foto */
 #myVideo {
@@ -183,46 +96,228 @@ body {
 }
 
 
+/* titel */
+h1 {text-align: center;}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+
+/* achtergrond kleur */
+body {
+  background-color: #050805;
+  
+}
+
+/* titels  */
+h1 {
+  font-size: 50px;
+  color: #FAF1F3
+  }
+  
+  h2 {
+  font-size: 20px;
+  text-align: center;
+  }
+
+  ul {
+    text-align: center;
+    list-style-position: inside;
+  }
+  
+  .titel1{
+      color: #FAF1F3;
+      margin-top: 50px;
+      margin-bottom: 0px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: 60px;
+  }
+  
+  .titel2{
+      color: #FAF1F3;
+      margin-top: -20px;
+      margin-bottom: 50px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: 40px;
+  }
+  .subkopjes{
+    color: #FAF1F3;
+    margin-top: 150px;
+    margin-bottom: 60px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 40px;
+}
+
+
+
+/* ID's kaarten */
+#leafletkaart{
+    color: rgb(248, 240, 227);
+    text-align: center;
+    margin-top: -25px;
+}
+#leafletkaart2{
+  color: rgb(248, 240, 227);
+  text-align: center;
+  margin-top: -100px;
+}
+#hoogtekaart{
+  color: rgb(248, 240, 227);
+  text-align: center; 
+}
+#etniciteit{
+  color: rgb(248, 240, 227);
+  text-align: center; 
+}
+#vluchtroute{
+  color: rgb(248, 240, 227);
+  text-align: center; 
+}
+#openlayers{
+  color: rgb(248, 240, 227);
+  text-align: center;  
+}
+#openlayers2{
+color: rgb(248, 240, 227);
+text-align: center;  
+}
+
+#flourishbevolkingsdichtheid{
+  color: rgb(248, 240, 227);
+  text-align: center; 
+}
+#maplibre{
+  color: rgb(248, 240, 227);
+  text-align: center; 
+}
+
+#topo{
+  color: rgb(248, 240, 227);
+  text-align: center; 
+}
+
+
+
+/* alle css voor de teksten onder de kaarten */
+.tekstenonderkaarten {
+  color: rgb(248, 240, 227);
+    text-align: center;
+    margin-top: 75px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 200px;
+}
+.tekstenonderkaarten2 {
+  color: rgb(248, 240, 227);
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+#tekstenonderkaarten {
+  color: rgb(248, 240, 227);
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+#hoogtekaart2{
+  width: 100%;
+  height: 400px;
+}
+
+
+/* alle css voor de kaarten */
+.kaarten {
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: center;
+}
+
+.kaarten2 {
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: center;
+}
+
+
+.mijnknopjes{
+  display: block;
+  position: relative;
+  margin: 0px auto;
+  width: 50%;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: #97A8C3;
+  margin-bottom: 3px;
+  cursor: pointer;
+}
+
+#fly {
+  display: block;
+  position: relative;
+  margin: 0px auto;
+  width: 50%;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: #97A8C3;
+  margin-bottom: 3px;
+  cursor: pointer;
+  }
+
+  #fly2 {
+    display: block;
+    position: relative;
+    margin: 0px auto;
+    width: 50%;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #97A8C3;
+    margin-bottom: 3px;
+    cursor: pointer;
+    }
+
+    #fly3 {
+      display: block;
+      position: relative;
+      margin: 0px auto;
+      width: 50%;
+      height: 40px;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      font-size: 12px;
+      text-align: center;
+      color: #fff;
+      background: #97A8C3;
+      margin-bottom: 50px;
+      cursor: pointer;
+      }
+
 /* footer class */
 .footer{
     background-color: #050805;
     padding: 14px 16px;
     margin-top: 50px;
     text-align: center;
-}
-
-
-/* titels  */
-h1 {
-font-size: 50px;
-color: #FAF1F3
-}
-
-h2 {
-font-size: 20px;
-text-align: center;
-}
-
-.titel1{
-    color: #FAF1F3;
-    margin-top: 50px;
-    margin-bottom: 0px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 60px;
-}
-
-.titel2{
-    color: #FAF1F3;
-    margin-top: -20px;
-    margin-bottom: 50px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 40px;
-}
-
-/* achtergrond kleur */
-body {
-  background-color: #050805;
-  
 }
 
 

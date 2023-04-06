@@ -1,167 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta name="Nieuw zeeland in beeld" content="new zealand">
-  <meta name="new zealand, toerism, auckland" content="HTML, CSS, JavaScript">
+    <meta name="Nieuw zeeland in beeld" content="new zealand">
+    <meta name="new zealand, toerism, auckland" content="HTML, CSS, JavaScript">
 
-  <!---device width en zorgen dat hij responsive is-->
-<meta name="myVideo" content="width=device-width, initial-scale=1.0">
-<meta name="container" content="width=device-width, initial-scale=1.0">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!---device width en zorgen dat hij responsive is-->
+    <meta name="myVideo" content="width=device-width, initial-scale=1.0">
+    <meta name="container" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!---link naar css-->
-<link rel="stylesheet" href="css/main.css">
+    <!---link naar css-->
+    <link rel="stylesheet" href="css/main.css">
 
-<!---link naar leaflet-->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
-     integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-     crossorigin="">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.3.0/ol.css">
+    <!---link naar leaflet-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+        integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.3.0/ol.css">
 
-<!---script voor leaflet-->
-<script src="https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js"></script>
-<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
-    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
-    crossorigin=""></script>
+    <!---script voor leaflet-->
+    <script src="https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js"></script>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+        integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+        crossorigin=""></script>
 
-<!---script voor terraformer-->
-<script src="https://cdn.jsdelivr.net/npm/terraformer"></script>
- <script src="https://unpkg.com/@terraformer/wkt"></script>
+    <!---script voor terraformer-->
+    <script src="https://cdn.jsdelivr.net/npm/terraformer"></script>
+    <script src="https://unpkg.com/@terraformer/wkt"></script>
 
+    <!--link voor openlayers-->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css"
+        type="text/css">
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.3.0/ol.css">
+
+    <!-- link voor maplibre -->
+    <script src='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js'></script>
+    <link href='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css' rel='stylesheet' />
+
+    <!-- arcgis map -->
+    <link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css">
 
 </head>
-<body> 
-<!---navigatie-->
+
+<body>
+    <!---navigatie-->
     <div class="topnav" id="myTopnav">
         <a href="#home" class="logo"><b>NIEUW ZEELAND</b></a>
         <a href="#footer">CONTACT</a>
-        <a href="#flourishbevolkingsdichtheid"><b>BEVOLKING</b></a>
-        <a href="#leafletkaart"><b>TOERISME</b></a>
-        <a href="#vluchtroute"><b>ROUTE</b></a>
+        <a href="#hetland"><b>HET LAND</b></a>
+        <a href="#roadtrip"><b>ROADTRIP</b></a>
+        <a href="#stageplek"><b>STAGE</b></a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
-          </a>
-      </div>
-
-<!---achtergrond foto-->
-      <div>
-        <div class="videogroot">
-            <img src="img/Pexelskleiner.png"
-           width="100%" ></img>
-        </div> 
-
-<!---titels-->
- <div class="titel1">
-            <h1><b>NIEUW ZEELAND IN BEELD</b></h1>
-            </div>
-            <div class="titel2">
-                <h2>TOERISME/BEVOLKING/ROUTES</h2>
-            </div>
-            
-
-
-
-<!---leafletkaart-->
-<div class="leafletkaart">
-    <div id="leafletkaart" style="width: 100%; height: 400px;"> </div>
-<!---tekst leafletkaart-->
-<div class="leafletkaart">
-    <p id="leafletkaart">
-            leaflet kaart 1 - locatie nieuw zeeland</p>       
-     </div>
-
-
-
-<!---knopjes onder leafletkaart-->
-<div id="knopjes"></div>
-
-
-
-
-<!---tekst openlayerskaart-->
-<div class="openlayerskaart">
-<p id="openlayerskaart">
-         openlayers kaart 2 - onderwerp?</p>
- </div>
-<!---openlayerskaart-->
-<div class="openlayerskaart"></div>
-
-
-
-
-
-<!---tekst flourish bevolkingsdichtheid-->
-<div class="flourishbevolkingsdichtheid">
-    <p id="flourishbevolkingsdichtheid">
-             Datawrapper 3 - bevolkingsdichtheid</p>
-     </div>
-<!---Flourish bevolkingsdichtheid-->
- <div class="flourishbevolkingsdichtheid">
-    <div class="flourish-embed flourish-scatter" data-src="visualisation/13110766"><script src="https://public.flourish.studio/resources/embed.js"></script>
-    </div>   
-
-
-
-<!---Tekst bij ArcgisOnline Hoogtekaart-->
-<div class="hoogtekaart">
-    <p id="hoogtekaart">
-             Arcgis kaart 4- Hoogtekaart</p>
-     </div>
-<!---ArcgisOnline Hoogtekaart-->
-  <div class="hoogtekaart">
-    <iframe src="https://aereshogeschool.maps.arcgis.com/apps/instant/basic/index.html?appid=087a02ec62db40b1be50e899491f3eab&locale=en" width="auto" height="600" frameborder="0" style="border:0" allowfullscreen>iFrames are not supported on this page.</iframe>  
-</div>
-
-
-
-
-<!---Tekst onder DataWrapper etniciteit-->
-<div class="etniciteit">
-    <p id="etniciteit">
-             Kaart 5 - etniciteit</p>
-     </div>
-<!---DataWrapper etniciteit-->
- <div class="etniciteit">
-    <div class="flourish-embed flourish-chart" data-src="visualisation/13110926"><script src="https://public.flourish.studio/resources/embed.js"></script>
+        </a>
     </div>
+
+    <!---achtergrond foto-->
+    <div class="videogroot">
+        <img src="img/Pexelskleiner.png" width="100%"></img>
+    </div>
+
+    <!---titels-->
+    <div class="titel1">
+        <h1><b>STAGE IN NIEUW ZEELAND</b></h1>
+    </div>
+    <div class="titel2">
+        <h2> ------ VLUCHT/ROADTRIP/HERKOMST ------ </h2>
+    </div>
+
+
+    <!-- titels boven de verschillende kaarten -->
+    <div class="subkopjes">
+        <h2> ◦ DE LOCATIE ◦ </h2>
+    </div>
+
+
+    <!---leafletkaart2-->"
+    <div class="kaarten">
+        <div id="leafletkaart2" style="width: 100%; height: 400px;"> </div>
+    </div>
+    <!---tekst leafletkaart2-->
+    <div class="tekstenonderkaarten">
+        <p id="tekstenonderkaarten">
+            Hii! Wij zijn Carlijn, Anouk en Joyce en 16 April begint onze buitenlandstage en onze reis naar
+            Nieuw-Zeeland! Nieuw-Zeeland ligt in het continent Oceanie en is zo'n 18.526KM van Nederland vandaan. Onze
+            stage loopt van 24 april tot 23 juni, dus 9 weken. Na die 9 weken gaan we(zie hieronder wie we zijn en waar
+            van vandaan komen) nog 1 maand reizen door Nieuw-Zeeland, hierover ook later meer! </p>
     </div>
 
 
 
+    <!-- titels boven de verschillende kaarten -->
+    <div class="subkopjes">
+        <h2> ◦ HERKOMST ◦ </h2>
+    </div>
 
-<!---Tekst onder Flourish Vluchtroute-->
-<div class="vluchtroute">
-    <p id="vluchtroute">
-             Kaart 6 - vluchtroute</p>
-     </div>
-<!---Flourish Vluchtroute-->
-<div class="vluchtroute">
-    <div class="flourish-embed flourish-globe" data-src="visualisation/13111720"><script src="https://public.flourish.studio/resources/embed.js"></script></div>    
-</div>
+    <!---leafletkaart-->
+    <div class="kaarten">
+        <div id="leafletkaart" style="width: 100%; height: 400px;"> </div>
+    </div>
+
+    <!---knopjes onder leafletkaart-->
+    <div class="tekstenonderkaarten2">
+        <div id="knopjes"></div>
+    </div>
+
+    <!---tekst leafletkaart-->
+    <div class="tekstenonderkaarten2">
+        <p id="tekstenonderkaarten">
+            Wie zijn wij? Wij zijn Carlijn, Anouk en Joyce en wij gaan samen voor 3 maanden naar Nieuw-Zeeland.
+            Momenteel studeren wij alle drie Geo, Media en Design aan de Aeres Hogeschool in Almere. Toch komen wij
+            allemaal niet uit Almere, zo komt Carlijn uit Heino, Anouk uit Nieuwveen en ik (Joyce) uit Roelofarendsveen!
+
+            De 9 stageweken doe ik (Joyce) apart van Anouk en Carlijn. Anouk en Carlijn gaan namelijk stage lopen bij
+            Landcare Research in Palmerston North. Mijn stagebedrijf is Waiheke Resource Trust (hierover straks meer),
+            dit is op zo'n 6 uur afstand van Anouk en Carlijn. </p>
+    </div>
+
+
+    <!-- titels boven de verschillende kaarten -->
+    <div class="subkopjes">
+        <h2> ◦ DE VLUCHT ◦ </h2>
+    </div>
+
+    <!---Flourish Vluchtroute-->
+    <div class="kaarten">
+        <div class="flourish-embed flourish-globe" id='vlucht' data-src="visualisation/13111720">
+            <script src="https://public.flourish.studio/resources/embed.js"></script>
+        </div>
+    </div>
+
+    <!---tekst vluchtroute-->
+    <div class="tekstenonderkaarten">
+        <p id="tekstenonderkaarten">
+            De vlucht naar Nieuw-Zeeland is niet zomaar een vlucht. Eigenlijk is Nieuw-Zeeland namelijk aan de andere
+            kant van de wereld. Als je een lijn door de aarde zou trekken vanaf Nederland naar beneden zou je ongeveer
+            in Nieuw-Zeeland uitkomen! Om in Nieuw-Zeeland te komen kun je kiezen tussen verschillende routes;
+            </br>
+            </br>
+        <ul style="list-style-type:none;">
+            <li>Overstap op Amerika</li>
+            <li>Overstap op Singapore</li>
+            <li>Overstap op Japan</li>
+            <li>Overstap op Zuid-Korea</li>
+        </ul>
+        </br>
+        </br>
+        Wij hebben ervoor gekozen om de route via Zuid-Korea te doen. Via Amerika, is namelijk nogal een geregel met
+        visums en via deze route was de snelste en voordeligste optie. We vliegen eerst 10 uur richting Zuid-Korea, dan
+        hebben we een korte overstap en daarna vliegen we nog 11 uur door naar Auckland, Nieuw-Zeeland. Op de terugweg
+        doen we er een stuk langer over, we hebben dan namelijk een 18 uur durende overstap op Zuid-Korea. </p>
+    </div>
+
+    <!-- titels boven de verschillende kaarten -->
+    <div class="subkopjes">
+        <h2 id='stageplek'> ◦ STAGEPLEK ◦ </h2>
+    </div>
+
+
+    <!-- maplibre kaart -->
+    <div class="kaarten">
+        <div id='maplibre' style='width: 100%; height: 400px;'></div>
+    </div>
+    <br />
+    <button id="fly">STAGEPLEK JOYCE</button>
+    <button id="fly2">STAGEPLEK ANOUK & CARLIJN</button>
+    <button id="fly3">TERUG</button>
+
+    <!---tekst leafletkaart-->
+    <div class="tekstenonderkaarten">
+        <p id="tekstenonderkaarten">
+            De 9 weken stage doe ik (Joyce) apart van Anouk en Carlijn. Anouk en Carlijn gaan namelijk stage lopen bij
+            Landcare Research in Palmerston North. Mijn stagebedrijf is Waiheke Resource Trust op Waiheke Island, zie de
+            kaart hierboven. Waiheke Island is op zo'n 6 uur afstand van Anouk en Carlijn. </p>
+    </div>
+
+    <!-- titels boven de verschillende kaarten -->
+    <div class="subkopjes">
+        <h2 id='roadtrip'> ◦ DE ROADTRIP ◦ </h2>
+    </div>
+
+    <!---kaart toeristische punten-->
+    <div class="kaarten2">
+        <div id="openlayers2" style="width: 100%; height: 400px;"></div>
+
+        <!---tekst roadtripkaart-->
+        <div class="tekstenonderkaarten">
+            <p id="tekstenonderkaarten">
+                Na onze 9 weken stage gaan we met z'n drietjes op pad! We gaan dan een roadtrip maken over het
+                zuidereiland van Nieuw Zeeland! We hebben dan voor 4 weken een auto gehuurd en gaan alle toeristische
+                plekken af! De meest toeristische plekken in Nieuw-Zeeland staan in de kaart aangegeven en zijn van
+                noord naar zuid;
+                </br>
+                </br>
+            <ul style="list-style-type:none;">
+                <li>Auckland</li>
+                <li>Palmerston North</li>
+                <li>Abel Tasman National Park</li>
+                <li>Christchurch</li>
+                <li>Lake Tekapo</li>
+                <li>Queenstown</li>
+            </ul>
+            </p>
+        </div>
+
+
+        <!-- Titel nieuw deel -->
+        <div class="titel2">
+            <h2 id='hetland'> ------ BEVOLKING/LANDSCHAP/AARDBEVINGEN ------ </h2>
+        </div>
+
+        </br>
+
+        <!-- titels boven de verschillende kaarten -->
+        <div class="subkopjes">
+            <h2> ◦ BEVOLKINGSDICHTHEID ◦ </h2>
+        </div>
+
+
+        <!---Flourish bevolkingsdichtheid-->
+        <div class="kaarten">
+            <div class="flourish-embed flourish-scatter" data-src="visualisation/13110766">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+            </div>
+        </div>
+
+        <!---tekst bevolkingsdichtgheid-->
+        <div class="tekstenonderkaarten">
+            <p id="tekstenonderkaarten">
+                De bevolkingsdichtheid in Nieuw-Zeeland is vanaf 1960 flink toegenomen. In 1960 had Nieuw-Zeeland
+                ongeveer 2,6 miljoen inwoners en een bevolkingsdichtheid van ongeveer 9 mensen per vierkante kilometer.
+                Sindsdien is de bevolking gegroeid tot meer dan 5 miljoen mensen en de bevolkingsdichtheid naar 18
+                mensen per vierkante kilometer. Deze stijging kan komen door een aantal factoren, een groeiende
+                economie, meer immigratie en verbeteringen in de gezondheidszorg en de leefomstandigheden. </p>
+        </div>
+
+
+        <!-- titels boven de verschillende kaarten -->
+        <div class="subkopjes">
+            <h2> ◦ ETNICITEIT ◦ </h2>
+        </div>
+
+        <!---DataWrapper etniciteit-->
+        <div class="kaarten">
+            <div class="flourish-embed flourish-chart" data-src="visualisation/13110926">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+            </div>
+        </div>
+
+        <!---tekst etniciteit-->
+        <div class="tekstenonderkaarten">
+            <p id="tekstenonderkaarten">
+                Zoals in de bevolkingsdichtheid-grafiek hierboven te zien is, is de bevolking erg gegroeid over de
+                afgelopen jaren door immigratie. Dit komt doordat Nieuw-Zeeland sinds de jaren 90 hooggeschoolde
+                migraten gestimuleerd heeft om in Nieuw-Zeeland te komen werken. </p>
+        </div>
+
+        <!-- titels boven de verschillende kaarten -->
+        <div class="subkopjes">
+            <h2> ◦ HOOGTEKAART ◦ </h2>
+        </div>
+
+        <!-- arcgis online hoogtekaart door javascript -->
+        <div class="kaarten">
+            <div id="hoogtekaart2">
+            </div>
+        </div>
+
+        <!---tekst hoogtekaart-->
+        <div class="tekstenonderkaarten">
+            <p id="tekstenonderkaarten">
+                Nieuw-Zeeland is een geologisch actief land, en het landschap is gevormd door zowel tektonische
+                aciviteit als vulkaanuitbarstingen. Het land heeft verschillende vulkanen, waarvan sommige nog steeds
+                actief zijn. De hoogtekaart van Nieuw-Zeeland laat deze geologische aciviteit zien, veel van de hoogste
+                toppen zijn vulkanisch van oorsprong. De hoogste berg van Nieuw-Zeeland is Mount Cook, deze is 3724
+                meter hoog! De hoogtekaart laat een serie bergtoppen en kraters zien, met hoogtes varierend van ongeveer
+                1600 tot meer dan 2700 meter. </p>
+        </div>
+
+
+        <!-- titels boven de verschillende kaarten -->
+        <div class="subkopjes">
+            <h2> ◦ TOPOGRAFISCHE KAART ◦ </h2>
+        </div>
+
+        <!-- arcgis online hoogtekaart door javascript -->
+        <div class="kaarten">
+            <div id='topo' style='width: 100%; height: 400px;'></div>
+        </div>
+
+        <!---tekst hoogtekaart-->
+        <div class="tekstenonderkaarten">
+            <p id="tekstenonderkaarten">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum. </p>
+        </div>
+        <!-- titels boven de verschillende kaarten -->
+        <div class="subkopjes">
+            <h2> ◦ AARDBEVINGEN ◦ </h2>
+        </div>
+
+
+        <!-- datavisualisatie aardbevingen -->
+        <div class="infogram-embed" data-id="db589734-8784-41b1-a2c8-482f3cbff0cb" data-type="interactive"
+            data-title="Column Chart"></div>
+        <script>!function (e, i, n, s) { var t = "InfogramEmbeds", d = e.getElementsByTagName("script")[0]; if (window[t] && window[t].initialized) window[t].process && window[t].process(); else if (!e.getElementById(n)) { var o = e.createElement("script"); o.async = 1, o.id = n, o.src = "https://e.infogram.com/js/dist/embed-loader-min.js", d.parentNode.insertBefore(o, d) } }(document, 0, "infogram-async");</script>
+
+        <!---tekst hoogtekaart-->
+        <div class="tekstenonderkaarten">
+            <p id="tekstenonderkaarten">
+                Nieuw-Zeeland is niet alleen vulkanisch actief maar ook seismisch. Nieuw-Zeeland ligt namelijk op de
+                grens tussen de tektonische platen van de stille oceaan en die van Australie. Het land heeft vaak te
+                maken met aardbevingen voor de kust en enkele aan land. Dit komt omdat Nieuw-Zeeland in 'The Ring of
+                Fire' ligt.
+                </br>
+                </br>
+                De Inangahua aardbeving in 1968 was een van de grootste aardbevingen van het zuidereiland. Deze
+                aardbeving had een kracht van 7.1 op de schaal van richter. Deze aardbeving zorgde voor aard- en
+                rotsverschuivingen en vele scheuren in het landschap.
+                </br>
+                </br> De Kaikoura aardbeving in 2016 had een kracht van 7.8 op de schaal van richter en veroorzaakte
+                duizende aardverschuivingen en zorgde voor ernstige schade aan spoorlijnen en snelwegen. </p>
+        </div>
 
 
 
 
-<!---Link naar javascript-->
-<script src="js/main.js"></script>
+
+        <!---Link naar javascript-->
+        <script src="https://js.arcgis.com/4.26/"></script>
+        <script src="js/main.js"></script>
+
+
+
+        <!---Footer-->
+        <div class="footer">
+            <footer id="footer">
+                <a href="https://www.aereshogeschool.nl" target="_blank">
+                    <button4><img src="img/aeres logo.png" alt="aeres logo" width="50px" height="50px"> </button4>
+                </a>
+                <a href="https://www.linkedin.com/in/joyce-straver-22a4111b6/" target="_blank">
+                    <button4><img src="img/logowit kopie.png" alt="logo" width="50px" height="50px"></button4>
+                </a>
+                <p class="footertext">COPYRIGHT 2022 &copy; JOYCE STRAVER
+                </p>
+            </footer>
+
+        </div>
 
 </body>
-
-
-<!---Footer-->
-<div class="footer">
-  <footer id="footer"> 
-      <a href="https://www.aereshogeschool.nl" target="_blank">
-     <button4><img src="img/aeres logo.png" alt="aeres logo" width="50px" height="50px"> </button4></a>
-     <a href="https://www.linkedin.com/in/joyce-straver-22a4111b6/" target="_blank">
-      <button4><img src="img/logowit kopie.png" alt="logo" width="50px" height="50px"></button4></a>
-      <p
-      class="footertext">COPYRIGHT 2022 &copy; JOYCE STRAVER    
-      </p>
-      </footer>
-  
-  </div>
-
 
 </html>
