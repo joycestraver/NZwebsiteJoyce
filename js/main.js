@@ -28,7 +28,7 @@ var popup = marker.bindPopup('<b>NIEUW ZEELAND</b><br');
 
 // icoon leaflet kaart veranderen naar een huisje
 var myIcon = L.icon({
-    iconUrl: './img/home.png',
+    iconUrl: '../img/home.png',
     iconSize: [50],
     iconAnchor: [22, 40],
     // popupAnchor: [-3, -76],
@@ -214,7 +214,7 @@ topo.on('load', function () {
         // use the tiles option to specify a WMS tile source URL
         // https://maps.scinfo.org.nz/basemaps/wms?version=1.1.1&service=WMS&request=GetCapabilities
         'tiles': [
-            'https://maps.scinfo.org.nz/cached/?LAYERS=topobasemap_notext&FORMAT=png8&TRANSPARENT=true&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&SRS=EPSG%3A2193&BBOX=1365759.8025,5149297.5351,1368017.5790,5151555.3117&WIDTH=256&HEIGHT=256'
+            'https://maps.scinfo.org.nz/cached/?LAYERS=lcdb_lcdb3&FORMAT=png8&TRANSPARENT=true&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&SRS=EPSG:3857&BBOX={bbox-epsg-3857}&WIDTH=256&HEIGHT=256'
         ],
         'tileSize': 256
     });
@@ -228,6 +228,8 @@ topo.on('load', function () {
         'aeroway_fill'
     );
 });
+
+// https://maps.scinfo.org.nz/cached/?request=getCapabilities&service=wms
 
 
 
