@@ -28,7 +28,7 @@ var popup = marker.bindPopup('<b>NIEUW ZEELAND</b><br');
 
 // icoon leaflet kaart veranderen naar een huisje
 var myIcon = L.icon({
-    iconUrl: '../img/home.png',
+    iconUrl: './img/home.png',
     iconSize: [50],
     iconAnchor: [22, 40],
     // popupAnchor: [-3, -76],
@@ -157,7 +157,7 @@ document.getElementById('fly3').addEventListener('click', function () {
 maplibre.on('load', function () {
     maplibre.addSource('waiheke', {
         type: 'geojson',
-        data: '../data/Waiheke_Island.geojson'
+        data: './data/Waiheke_Island.geojson'
     });
 
     maplibre.addLayer({
@@ -180,7 +180,7 @@ maplibre.on('load', function () {
 maplibre.on('load', function () {
     maplibre.addSource('palmerston', {
         type: 'geojson',
-        data: '../data/palmerston.geojson'
+        data: './data/palmerston.geojson'
     });
 
     maplibre.addLayer({
@@ -240,7 +240,7 @@ const openlayers2 = new ol.Map({
         }),
         new ol.layer.Vector({
             source: new ol.source.Vector({
-                url: '../data/map4.geojson',
+                url: './data/map4.geojson',
                 format: new ol.format.GeoJSON(),
             })
         })
