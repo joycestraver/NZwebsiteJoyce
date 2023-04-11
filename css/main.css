@@ -181,6 +181,7 @@ h1 {
 #openlayers2{
 color: rgb(248, 240, 227);
 text-align: center;  
+pointer-events: none;
 }
 
 #flourishbevolkingsdichtheid{
@@ -311,6 +312,8 @@ text-align: center;
       margin-bottom: 50px;
       cursor: pointer;
       }
+
+
 
 /* footer class */
 .footer{

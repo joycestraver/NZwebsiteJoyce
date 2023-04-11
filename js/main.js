@@ -1,6 +1,6 @@
 
 // leafletkaart 
-var leafletkaart = L.map('leafletkaart').setView([52.0603, 5.3846], 6);
+var leafletkaart = L.map('leafletkaart', { scrollWheelZoom: false}).setView([52.0603, 5.3846], 6);
 L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     subdomains: 'abcd',
@@ -9,11 +9,11 @@ L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext
     ext: 'png'
     // pinpoint leafletkaart
 }).addTo(leafletkaart);
-// var marker = L.marker([52.10083, 5.64611]).addTo(leafletkaart);
-// var popup = marker.bindPopup('<b>NEDERLAND</b><br'); 
+
+
 
 // leafletkaart 2
-var leafletkaart2 = L.map('leafletkaart2').setView([-41.67296, 173.22505], 3);
+var leafletkaart2 = L.map('leafletkaart2', { scrollWheelZoom: false}).setView([-41.67296, 173.22505], 3);
 L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     subdomains: 'abcd',
@@ -28,13 +28,9 @@ var popup = marker.bindPopup('<b>NIEUW ZEELAND</b><br');
 
 // icoon leaflet kaart veranderen naar een huisje
 var myIcon = L.icon({
-    iconUrl: '../img/home.png',
+    iconUrl: './img/home.png',
     iconSize: [50],
     iconAnchor: [22, 40],
-    // popupAnchor: [-3, -76],
-    // shadowUrl: '../img/home.png',
-    // shadowSize: [68, 95],
-    // shadowAnchor: [22, 94]
 });
 var marker = L.marker([52.10083, 5.64611], { icon: myIcon }).addTo(leafletkaart);
 var popup = marker.bindPopup('<b>NEDERLAND</b><br');
@@ -62,32 +58,6 @@ function myFunction() {
 };
 
 
-// openlayerskaart 
-// var attribution = new ol.control.Attribution({
-//     collapsible: false
-// });
-
-// var map = new ol.Map({
-//     controls: ol.control.defaults({attribution: false}).extend([attribution]),
-//     layers: [
-//         new ol.layer.Tile({
-//             source: new ol.source.OSM({
-//                 url: 'https://tile.openstreetmap.be/osmbe/{z}/{x}/{y}.png',
-//                 attributions: [ ol.source.OSM.ATTRIBUTION, 'Tiles courtesy of <a href="https://geo6.be/">GEO-6</a>' ],
-//                 maxZoom: 18
-//             })
-//         })
-//     ],
-//     target: 'openlayers',
-//     view: new ol.View({
-//         center: ol.proj.fromLonLat([4.35247, 50.84673]),
-//         maxZoom: 18,
-//         zoom: 12
-//     })
-// });
-
-
-
 
 // maplibre
 var start = [173.22505, -41.67296];
@@ -99,6 +69,9 @@ var maplibre = new maplibregl.Map({
     center: start,
     zoom: 4
 });
+
+maplibre.scrollZoom.disable();
+maplibre.addControl(new maplibregl.NavigationControl());
 
 var isAtStart = true;
 document.getElementById('fly').addEventListener('click', function () {
@@ -152,6 +125,8 @@ document.getElementById('fly3').addEventListener('click', function () {
         essential: true
     });
 });
+
+
 
 //extra laag toevoegen aan maplibre kaart
 maplibre.on('load', function () {
@@ -211,10 +186,8 @@ var topo = new maplibregl.Map({
 topo.on('load', function () {
     topo.addSource('wms', {
         'type': 'raster',
-        // use the tiles option to specify a WMS tile source URL
-        // https://maps.scinfo.org.nz/basemaps/wms?version=1.1.1&service=WMS&request=GetCapabilities
         'tiles': [
-            'https://maps.scinfo.org.nz/cached/?LAYERS=lcdb_lcdb3&FORMAT=png8&TRANSPARENT=true&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&SRS=EPSG:3857&BBOX={bbox-epsg-3857}&WIDTH=256&HEIGHT=256'
+            'https://maps.scinfo.org.nz/cached/?LAYERS=lri_phys_sustain&FORMAT=png8&TRANSPARENT=true&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&SRS=EPSG:3857&BBOX={bbox-epsg-3857}&WIDTH=256&HEIGHT=256'
         ],
         'tileSize': 256
     });
@@ -228,6 +201,11 @@ topo.on('load', function () {
         'aeroway_fill'
     );
 });
+
+topo.scrollZoom.disable();
+topo.addControl(new maplibregl.NavigationControl());
+
+// legenda nog toevoegen: https://maps.scinfo.org.nz/lri/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&LAYER=lri_phys_sustain&FORMAT=png8
 
 // https://maps.scinfo.org.nz/cached/?request=getCapabilities&service=wms
 
@@ -250,6 +228,7 @@ const openlayers2 = new ol.Map({
     view: new ol.View({
         center: ol.proj.fromLonLat([173.22505, -41.67296]),
         zoom: 5,
+        scrollWheelZoom: false
     }),
 });
 
@@ -280,14 +259,17 @@ require([
     const view = new MapView({
         container: "hoogtekaart2",
         map: hoogtekaart2,
-        zoom: 5
+        zoom: 5,
+        navigation: {
+            mouseWheelZoomEnabled: false,
+            browserTouchPanEnabled: false
+          }
     });
     const legend = new Legend({
         view: view
     });
     view.ui.add(legend, "bottom-left");
 });
-
 
 
 
